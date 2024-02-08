@@ -1,17 +1,19 @@
-import { HttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-viwe-all-book',
   standalone: true,
-  imports: [],
+  imports: [HttpClientModule,FormsModule,CommonModule],
   templateUrl: './viwe-all-book.component.html',
   styleUrl: './viwe-all-book.component.css'
+  
 })
 export class ViweAllBookComponent implements OnInit{
       private http;
-      public booklist :any ={};
+      public bookList:any ={};
 
       constructor(private httpCliant:HttpClient ){
         this.http=httpCliant;
@@ -24,9 +26,9 @@ export class ViweAllBookComponent implements OnInit{
       lordBook(){
        
         this.http.get('http://localhost:8080/book/get').subscribe((data)=>{
-         this.booklist=data;  
-        console.log(data)
-      })
+         this.bookList=data;  
+        console.log(this.bookList);
+      });
       }
       
     }
