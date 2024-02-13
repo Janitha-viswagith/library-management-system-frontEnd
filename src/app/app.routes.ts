@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import {LoginComponent} from "./page/login/login.component";
 import {ViweAllBookComponent} from "./page/viwe-all-book/viwe-all-book.component";
+import {RegisterComponent} from "./page/register/register.component";
 
 export const routes: Routes = [
   {
@@ -10,6 +11,10 @@ export const routes: Routes = [
   {
     path:'viewAllBooks',
     component:ViweAllBookComponent
+  },
+  {
+    path:'sign-up',
+    component:RegisterComponent
   }
 
   ];
