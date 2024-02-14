@@ -34,7 +34,7 @@
             <div class="col-12">
               <label for="username" class="form-label">Username</label>
               <div class="input-group has-validation">
-                <span class="input-group-text">    </span>
+                <span class="input-group-text">   </span>
                 <input type="text" class="form-control" id="username" placeholder="Username" required>
                 <div class="invalid-feedback">
                   Your username is required.
@@ -67,7 +67,7 @@
               <label for="country" class="form-label">Country</label>
               <select class="form-select" id="country" required>
                 <option value="">Choose...</option>
-                <option>United States</option>
+                <option *ngFor="let country of countryList" (click)=" SelectCountry(country)"  >{{country.flag}} {{country.name.common}}</option>
               </select>
               <div class="invalid-feedback">
                 Please select a valid country.
@@ -75,9 +75,12 @@
             </div>
 
 
+
             <div class="col-md-6">
-              <label for="PhoneNumber" class="form-label">Phone Number</label>
-              <input type="number" class="form-control" id="phoneNumber" placeholder="" required>
+              <label for="zip" class="form-label">Phone Number</label>
+              <span class="input-group-text">    </span>
+              <input type="text" class="form-control" id="zip" placeholder="" required [(ngModel)]= "selectedCountry?.idd.root" [ngModelOptions]="{standalone:true}">
+
               <div class="invalid-feedback">
                 Zip code required.
               </div>
@@ -106,4 +109,12 @@
     </div>
   </main>
 
+  <footer class="my-5 pt-5 text-body-secondary text-center text-small">
+    <p class="mb-1">&copy; 2017–2023 Company Name</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
   </div>
