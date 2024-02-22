@@ -52,7 +52,7 @@ export class ViweAllBookComponent implements OnInit {
 
   setSelectBook(book: any): void {
     this.SelectedBook = book;
-    console.log("setSelectBook" + book.id);
+    console.log("setSelectBook " + book.id);
 
   }
 
