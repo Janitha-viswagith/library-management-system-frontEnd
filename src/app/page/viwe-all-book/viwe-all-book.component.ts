@@ -3,11 +3,12 @@ import { HttpClient,HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { NavComponent } from '../../common/nav/nav.component';
 
 @Component({
   selector: 'app-viwe-all-book',
   standalone: true,
-  imports: [HttpClientModule, FormsModule, CommonModule],
+  imports: [HttpClientModule, FormsModule, CommonModule,NavComponent],
   templateUrl: './viwe-all-book.component.html',
   styleUrls: ['./viwe-all-book.component.css']
 })

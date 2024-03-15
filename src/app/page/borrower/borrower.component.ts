@@ -3,14 +3,15 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
 import Swal from "sweetalert2";
+import { NavComponent } from "../../common/nav/nav.component";
 
 
 @Component({
-  selector: 'app-borrower',
-  standalone: true,
-  imports: [HttpClientModule,FormsModule,CommonModule],
-  templateUrl: './borrower.component.html',
-  styleUrl: './borrower.component.css'
+    selector: 'app-borrower',
+    standalone: true,
+    templateUrl: './borrower.component.html',
+    styleUrl: './borrower.component.css',
+    imports: [HttpClientModule, FormsModule, CommonModule, NavComponent]
 })
 export class BorrowerComponent {
 
@@ -24,7 +25,7 @@ export class BorrowerComponent {
   }
 
   loadBorrower(): void {
-    this.httpClient.get('http://localhost:8081/borrower/get').subscribe((data) => {
+    this.httpClient.get('http://localhost:8081/user/get-All-User').subscribe((data) => {
       this.borrowerList = data;
       console.log(this.borrowerList);
     });
@@ -37,7 +38,7 @@ export class BorrowerComponent {
          return;
        }
 
-       const api = `http://localhost:8081/borrower/${this.SelectedBorrower.id}`;
+       const api = `http://localhost:8081/user/delete/${this.SelectedBorrower.id}`;
 
        this.httpClient.delete(api,{responseType:'text'}).subscribe((response:string)=>{
          console.log(response);
@@ -55,11 +56,11 @@ export class BorrowerComponent {
 
    setSelectBorrower(borrower:any):void{
      this.SelectedBorrower=borrower;
-     console.log("setSelectBook  "+ borrower.id);
+     console.log("setSelectBorrower  "+ borrower.name);
    }
 
    saveBorrower(){
-     let postApi = "http://localhost:8081/borrower/add";
+     let postApi = "http://localhost:8081/add-user";
      this.httpClient.post(postApi, this.SelectedBorrower).subscribe(data=>{
        console.log("saved  !!");
        Swal.fire({
