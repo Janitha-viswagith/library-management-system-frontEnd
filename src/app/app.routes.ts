@@ -4,6 +4,7 @@ import {ViweAllBookComponent} from "./page/viwe-all-book/viwe-all-book.component
 import {RegisterComponent} from "./page/register/register.component";
 import {BorrowerComponent} from "./page/borrower/borrower.component";
 import {AddBooksComponent} from "./page/add-books/add-books.component";
+import {BookAndBorrowerComponent} from "./page/book-and-borrower/book-and-borrower.component";
 
 export const routes: Routes = [
   {
@@ -31,5 +32,10 @@ export const routes: Routes = [
     path:'addBooks',
     component:AddBooksComponent
 
+  },
+  {
+    path:'app-book-and-borrower',
+    component:BookAndBorrowerComponent
   }
+
   ];

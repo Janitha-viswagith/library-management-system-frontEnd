@@ -16,7 +16,7 @@
             <div class="row g-3">
               <div class="col-sm-6">
                 <label for="firstName" class="form-label">First name</label>
-                <input type="text" class="form-control" id="firstName" [(ngModel)]="userObject.firstName" [ngModelOptions]="{standalone: true}" placeholder="" value="" required>
+                <input type="text" class="form-control" id="firstName" [(ngModel)]="userObject.fistName" [ngModelOptions]="{standalone: true}" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Valid first name is required.
                 </div>
@@ -77,7 +77,7 @@
               </div>
               <div class="col-md-5">
                 <label for="zip" class="form-label">Phone</label>
-                <input type="text" class="form-control" [(ngModel)]="selectedCountryCode" [ngModelOptions]="{standalone: true}" [(ngModel)]="userObject.phoneNumber" [ngModelOptions]="{standalone: true}" id="zip" placeholder="" required>
+                <input type="number" class="form-control" [(ngModel)]="selectedCountryCode" [ngModelOptions]="{standalone: true}" [(ngModel)]="userObject.phoneNumber" [ngModelOptions]="{standalone: true}" id="zip" placeholder="" required>
                 <div class="invalid-feedback">
                   Zip code required.
                 </div>

@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit{
     private canRegisterUser :boolean=false;
     public selectedCountry:any="Country";
     public userObject={
-      firstName:null,
+      fistName:null,
       lastName:null,
       username:null,
       email:null,
@@ -95,7 +95,7 @@ export class RegisterComponent implements OnInit{
           console.log("add user");
           Swal.fire({
             title: "User Registration Success!",
-            text: `Hello ${this.userObject.firstName}`,
+            text: `Hello ${this.userObject.fistName}`,
             icon: "success"
           });
         },
